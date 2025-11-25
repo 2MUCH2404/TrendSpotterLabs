@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TrendSpotter Labs — Analytics & Reporting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <nav class="nav" id="site-nav">
       <div class="nav-inner">
         <div class="logo">TrendSpotter Labs</div>
-        <button id="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
         <ul class="nav-links" id="nav-links">
           <li><a href="#home" data-target="home">Home</a></li>
           <li><a href="#services" data-target="services">Services</a></li>
@@ -29,10 +29,15 @@
 
   <main>
     <section id="home" class="hero">
+      <div class="hero-bg">
+        <span class="glow g1"></span>
+        <span class="glow g2"></span>
+      </div>
       <div class="hero-inner">
         <div class="hero-copy">
+          <p class="eyebrow">Freelance analytics & reporting partner</p>
           <h1 class="hero-title">Turn Your Data Into Actionable Insights</h1>
-          <p class="hero-sub">TrendSpotter Labs is a freelance analytics & reporting service helping businesses, agencies, brands, and individuals make data-driven decisions.</p>
+          <p class="hero-sub">TrendSpotter Labs helps businesses, agencies, brands, and individuals make sharper decisions with marketing analytics, custom dashboards, and reporting that stays up to date.</p>
           <div class="hero-ctas">
             <a class="btn primary" id="cta-consult" href="#contact" data-target="contact">Request a Free Consultation</a>
             <div class="hero-note">Custom dashboards, automated reporting, and performance analytics for Meta ads and social media.</div>
@@ -43,8 +48,17 @@
             <div class="bar b1"></div>
             <div class="bar b2"></div>
             <div class="bar b3"></div>
+            <div class="line"></div>
             <div class="dot d1"></div>
             <div class="dot d2"></div>
+            <div class="dot d3"></div>
+          </div>
+          <div class="floating-card">
+            <p class="tiny">Weekly performance</p>
+            <div class="badge">↑ 18%</div>
+            <div class="sparkline">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
           </div>
         </div>
       </div>
@@ -52,24 +66,28 @@
 
     <section id="services" class="section services">
       <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-sub">Comprehensive analytics, reporting, dashboards and automation tailored to marketing and performance teams.</p>
+        <h2 class="section-title">Services tailored to your goals</h2>
+        <p class="section-sub">Comprehensive analytics, reporting, dashboards, and automation tuned to your marketing and growth metrics.</p>
         <div class="cards" id="service-cards">
           <article class="card">
+            <div class="pill">Meta Ads</div>
             <h3>Meta Ads Reporting</h3>
             <p>In-depth Meta (Facebook/Instagram) ads reporting at campaign and ad level: impressions, reach, CTR, conversions, CPC, ROAS, plus optimization insights for better ad performance.</p>
           </article>
           <article class="card">
+            <div class="pill">Social</div>
             <h3>Social Media Analytics</h3>
-            <p>Analytics for Facebook and Instagram (organic): follower growth, engagement, reach, clicks, best-performing content and recommended posting times to increase impact.</p>
+            <p>Analytics for Facebook and Instagram (organic): follower growth, engagement, reach, clicks, best-performing content, and recommended posting times to increase impact.</p>
           </article>
           <article class="card">
+            <div class="pill">Dashboards</div>
             <h3>Custom Reports & Dashboards</h3>
             <p>Custom dashboards in Looker Studio and Metabase with charts, filters, and KPIs designed for marketing funnels, sales, and web analytics—built for clarity and action.</p>
           </article>
           <article class="card">
+            <div class="pill">Automation</div>
             <h3>Automation of Reports & Data Collection</h3>
-            <p>Automated pipelines and reporting using Google Sheets, Apps Script, AppSheet and other tools so your reports stay up-to-date with minimal manual effort.</p>
+            <p>Automated pipelines and reporting using Google Sheets, Apps Script, and AppSheet so your reports stay up-to-date with minimal manual effort and cleaner data.</p>
           </article>
         </div>
       </div>
@@ -78,25 +96,25 @@
     <section id="tools" class="section tools">
       <div class="container">
         <h2 class="section-title">Tools & Platforms</h2>
-        <p class="section-sub">We work with a wide ecosystem of platforms and data tools.</p>
+        <p class="section-sub">We work across a versatile stack to keep data flowing smoothly.</p>
         <ul class="tools-grid" id="tools-grid">
-          <li class="tool">Looker Studio <span class="muted">(Google Data Studio)</span></li>
-          <li class="tool">Metabase</li>
-          <li class="tool">SQL Databases <span class="muted">(MySQL/Postgres)</span></li>
-          <li class="tool">MongoDB</li>
-          <li class="tool">Facebook Graph API</li>
-          <li class="tool">Google Sheets</li>
-          <li class="tool">BigQuery</li>
-          <li class="tool">AppSheet</li>
-          <li class="tool">Google Apps Script</li>
+          <li class="tool"><span class="icon">📊</span> Looker Studio <span class="muted">(Google Data Studio)</span></li>
+          <li class="tool"><span class="icon">📈</span> Metabase</li>
+          <li class="tool"><span class="icon">🗄️</span> SQL Databases <span class="muted">(MySQL/Postgres)</span></li>
+          <li class="tool"><span class="icon">🍃</span> MongoDB</li>
+          <li class="tool"><span class="icon">🔗</span> Facebook Graph API</li>
+          <li class="tool"><span class="icon">📑</span> Google Sheets</li>
+          <li class="tool"><span class="icon">☁️</span> BigQuery</li>
+          <li class="tool"><span class="icon">📱</span> AppSheet</li>
+          <li class="tool"><span class="icon">⚙️</span> Google Apps Script</li>
         </ul>
       </div>
     </section>
 
     <section id="outcomes" class="section outcomes">
       <div class="container">
-        <h2 class="section-title">Outcomes</h2>
-        <p class="section-sub">What you get working with TrendSpotter Labs.</p>
+        <h2 class="section-title">Outcomes you can rely on</h2>
+        <p class="section-sub">Clear visibility into marketing performance without the reporting headache.</p>
         <div class="outcome-grid" id="outcomes-grid">
           <div class="outcome">
             <div class="icon">📊</div>
@@ -147,7 +165,7 @@
             <div class="step-num">4</div>
             <div class="step-body">
               <h3>Ongoing Support</h3>
-              <p>Optional support, tweaks and maintenance as needs evolve.</p>
+              <p>Optional support, tweaks, and maintenance as needs evolve.</p>
             </div>
           </li>
         </ol>
@@ -162,29 +180,29 @@
 
           <form id="contact-form" novalidate>
             <div class="form-row">
-              <label>Full Name<span class="req">*</span>
+              <label for="name">Full Name<span class="req">*</span>
                 <input type="text" name="name" id="name" required>
                 <span class="error" id="err-name"></span>
               </label>
             </div>
             <div class="form-row">
-              <label>Email<span class="req">*</span>
+              <label for="email">Email<span class="req">*</span>
                 <input type="email" name="email" id="email" required>
                 <span class="error" id="err-email"></span>
               </label>
             </div>
             <div class="form-row">
-              <label>Phone
+              <label for="phone">Phone
                 <input type="tel" name="phone" id="phone">
               </label>
             </div>
             <div class="form-row">
-              <label>Company / Organization
+              <label for="company">Company / Organization
                 <input type="text" name="company" id="company">
               </label>
             </div>
             <div class="form-row">
-              <label>Service of Interest
+              <label for="service">Service of Interest
                 <select id="service" name="service">
                   <option>Meta Ads Reporting</option>
                   <option>Social Media Analytics</option>
@@ -195,7 +213,7 @@
               </label>
             </div>
             <div class="form-row">
-              <label>Message / Requirements<span class="req">*</span>
+              <label for="message">Message / Requirements<span class="req">*</span>
                 <textarea id="message" name="message" rows="5" required></textarea>
                 <span class="error" id="err-message"></span>
               </label>
@@ -211,13 +229,13 @@
         <aside class="contact-details">
           <h3>Contact</h3>
           <p><strong>Business email:</strong> <a href="mailto:trendspotterlabs@gmail.com">trendspotterlabs@gmail.com</a></p>
-          <p><strong>Other emails:</strong>
-            <br><a href="mailto:dhruvaeron570@gmail.com">dhruvaeron570@gmail.com</a>
-            <br><a href="mailto:rasad8619@gmail.com">rasad8619@gmail.com</a>
+          <p><strong>Other emails:</strong><br>
+            <a href="mailto:dhruvaeron570@gmail.com">dhruvaeron570@gmail.com</a><br>
+            <a href="mailto:rasad8619@gmail.com">rasad8619@gmail.com</a>
           </p>
-          <p><strong>Phone:</strong>
-            <br><a href="tel:+918059161080">+91 8059161080</a>
-            <br><a href="tel:+917887042404">+91 7887042404</a>
+          <p><strong>Phone:</strong><br>
+            <a href="tel:+918059161080">+91 8059161080</a><br>
+            <a href="tel:+917887042404">+91 7887042404</a>
           </p>
           <p class="muted">Pricing is completely customized and will be discussed based on your specific requirements and scope.</p>
         </aside>
