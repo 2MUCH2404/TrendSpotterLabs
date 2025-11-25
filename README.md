@@ -1,0 +1,2 @@
+# TrendSpotterLabs
+TrendSpotterLabs Website
