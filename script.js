@@ -137,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = qs('#name').value.trim();
     const email = qs('#email').value.trim();
     const message = qs('#message').value.trim();
+    const phone = qs('#phone').value.trim(); 
+    const company = qs('#company').value.trim();
     let valid = true;
 
     if (!name) { errName.textContent = 'Please enter your name.'; valid = false; }
@@ -144,17 +146,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!message) { errMessage.textContent = 'Please add a short message describing your needs.'; valid = false; }
 
     if (!valid) {
-      anime({ targets: '#contact-form', translateX: [-6, 6, -4, 4, 0], duration: 420, easing: 'easeInOutSine' });
-      return;
+        anime({ targets: '#contact-form', translateX: [-6, 6, -4, 4, 0], duration: 420, easing: 'easeInOutSine' });
+        return;
     }
 
     feedback.textContent = 'Sending…';
-    const submitValues = { name, email, message, service: qs('#service').value };
-    setTimeout(() => {
-      feedback.textContent = "Thank you! We'll review your requirements and get back to you soon to discuss a tailored plan and pricing.";
-      anime({ targets: '#form-feedback', opacity: [0, 1], translateY: [-6, 0], duration: 500, easing: 'easeOutCubic' });
-      form.reset();
-    }, 900);
-    console.log('Simulated form submission:', submitValues);
-  });
+    const submitValues = { name, email, message };
+
+    fetch('submit.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(submitValues)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            feedback.textContent = "Thank you! We'll review your requirements and get back to you soon.";
+            form.reset();
+            anime({ targets: '#form-feedback', opacity: [0, 1], translateY: [-6, 0], duration: 500, easing: 'easeOutCubic' });
+        } else {
+            feedback.textContent = "Error: " + (data.error || "Something went wrong.");
+        }
+    })
+    .catch(err => {
+        feedback.textContent = "Error: Could not submit form.";
+        console.error(err);
+    });
+});
+
 });
