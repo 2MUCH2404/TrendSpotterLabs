@@ -2,7 +2,7 @@
 header("Content-Type: application/json");
 
 
-if (!isset($_POST["name"], $_POST["email"], $_POST["message"], $_POST["phone"], $_POST["company"])) {
+if (!isset($_POST["name"], $_POST["email"], $_POST["message"])) {
     echo json_encode([
         "success" => false,
         "error" => "Missing required fields."
@@ -13,8 +13,8 @@ if (!isset($_POST["name"], $_POST["email"], $_POST["message"], $_POST["phone"], 
 $name = trim($_POST["name"]);
 $email = trim($_POST["email"]);
 $message = trim($_POST["message"]);
-$phone = trim($_POST["phone"]);
-$company = trim($_POST["company"]);
+$phone = isset($_POST["phone"]) ? trim($_POST["phone"]) : "";
+$company = isset($_POST["company"]) ? trim($_POST["company"]) : "";
 
 if ($name === "" || $email === "" || $message === "") {
     echo json_encode([

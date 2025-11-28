@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     feedback.textContent = 'Sending…';
-    const submitValues = { name, email, message };
+    const submitValues = { name, email, message, phone, company };
 
     fetch('submit.php', {
         method: 'POST',
