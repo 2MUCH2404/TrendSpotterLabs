@@ -40,7 +40,7 @@ try {
 
     
     $spreadsheetId = "1NHehLN8Xbn07xOFE8O0iyuxonARpKX1HzWM6SlkDfVY"; 
-    $range = "Sheet1!A:F"; 
+    $range = "LiveDB!A:F"; 
 
    
     $response = $service->spreadsheets_values->get($spreadsheetId, 'A:A');
